@@ -1,5 +1,4 @@
 #!/bin/bash
-#Marc Flückiger
 
 # Schreibt den Namen des Scripts ohne ./ und die Anzahl der Parameter raus 
 echo "Name: " ${0#*/}
