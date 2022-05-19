@@ -1,6 +1,6 @@
 #!/bin/bash
-
-Test mit Variablen
+# 16.05.22
+#Test mit Variablen
 
 VAR1=$0
 VAR2=${VAR1#*/}
