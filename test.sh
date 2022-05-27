@@ -1,7 +1,7 @@
 #!/bin/bash
 # Testfile von MF
 
-
+# aaa
 for ((zahl1=1; zahl<10; zahl++))
 do
 	echo $zahl 
