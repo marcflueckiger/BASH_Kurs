@@ -55,8 +55,36 @@
 # Exit Code
 # 0 = true / 1 = minor problem / 2 = serious trouble
 
+# While / For / Interation
+# while [ BEDINGUNG ];do; done
+# Solange ausführen bis Bedingung stimmt
 
 
+# FORM1 for variable in wort1 wort2;do Anweisung; done
+# FORM2 for ((anzahl=1; zahl<10; zahl++));do echo $zahl; done
+# Arbeitet eine Liste ab. 
+# Wird mit Befehlen verwendet. z.B: Find, ls, cat 
+# for datei in $(ls); do echo $datei; done
+
+# SHIFT
+# vermindert den Wert $# um 1
+# so kann immer mit $1 gearbeitet werden.
+
+# Until
+# until [ $zaehler == 0 ]; do echo $zaehler ;let zaehler=$zaehler-1; done
+# until [ $zaehler == 0 ]; do echo $zaehler ;let zaehler=$zaehler+1; done
+
+# Break
+# for var in $(ls); do if [ "$var" = "source" ]; then echo "Var \"$var\" gefunden ..."; break; fi; echo $var; done
+
+# Continue
+# Anweisung Continue lässt Schleife von vorne beginnen.
+# siehe zerocontinue.sh
+
+# Read
+# read name ; echo $name
+# read -p "Name eingeben: " name
+# read -s -p "Passwort eingeben " pass
 
 
 

@@ -1,21 +1,31 @@
 #!/bin/bash
 
 # Prüft ob Parameter vorhanden sind. Exit Code 2
-#if [ -e ${1} ]
 if [ $# -eq 0 ]
 then
-        echo "Es wurde kein Parameter eingegeben" >&2
-        exit 1
+# 
+	read -p "Balade z.B: 'John_Maynard.txt' eingeben: " file
 
-# Schreibt den Namen des Scripts ohne ./ und die Anzahl der Parameter raus
 else
+	file=$1
+fi
+
+if [ ! -f $file ]
+then
+	echo "Die Datei $file existiert nicht"
+	exit 1
+fi 
 
 zeilennr=0
-	while read balade
-	do
+while read balade
+do
+	if [[ ! $balade =~ ^# ]] 
+	then
 		((zeilennr++))
-		echo $zeilennr: $balade
-	done <John_Maynard.txt
+		echo "$zeilennr: $balade"
+	fi	
+	done <$file
 
-	echo $Balade
-fi
+#printf "%10s" $balade
+#echo $balade
+
