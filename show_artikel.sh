@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Ausgabe von Artikel, formatiert
 
 # Fehlerbehebung
@@ -18,7 +17,7 @@ then
         exit 1
 fi
 # Ausgabe
-d="Fr."
+
 printf "%-20s %6s %10s\n" Artikel Anzahl Preis
 echo "#####################################"
 

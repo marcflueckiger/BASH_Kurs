@@ -1,48 +1,42 @@
 #!/bin/bash
-# durchsucht ein Quell-Verzeichnis und seine Unterverzeichnissenach Dateien
-# mit einer bestimmten Endung (zum Beispiel .sh) und kopiert sie in ein Ziel-Verzeichnis.
-# Collect.sh hat 3 Parameter
-# 1. Parameter: Die Datei-Endung
-# 2. Parameter: Quell-Verzeichnis
-# 3. Parameter: Das Ziel-Verzeichnis. Wenn es nicht existiert, wird es angelegt
 
-ext=$1
-srcdir=$2
-tgtdir=$3
+endung="${1}"
+quelle="${2}"
+ziel="${3}'"
+counter=0
 
-# $tgtdir mit find durchsuchen nach dateien *.$ext
+if [ $# -ne 3 ];then
+	echo usage: collect.sh Endung Quell-Verzeichnis Ziel-Verzeichnis
+	exit 1
 
-if ! [ -d $tgtdir ];then
-  mkdir $tgtdir
 fi
 
-for file in $(find $srcdir -name "*$ext" -print)
+if ! [ -d ${quelle} ]
+then
+	echo Das Verzeichnis $quelle existiert nicht >&2
+	exit 2
+fi 
+# Fehlerprüfung. Wenn Ziel nicht exisitiert, wird es erstellt
+if ! [ -d ${ziel} ]
+then
+	mkdir ${ziel}
+fi
+# Setzen des Trennzeichens auf NL, damit Leerschläge nicht beatet werden
+IFS=$'\n'
+
+# Suche nach Datei in angegebene Quelle
+for file in $(find ${quelle} -name "*$endung" )
 do
- # cp $file $tgtdir
+	echo $file
+	#Kopiert Files nach Ziel
+	cp $file ${ziel}
+	((counter++))
 done
 
+# Trennzeichen wieder auf ihren ursprünglichen Wert zurücksetzen
+IFS=$' \t\n'
 
-
-#!/bin/bash
-# Testfile von MF
-
-#echo Endung=$1
-#echo Quelle=$2
-#echo Ziel=$3
-#
-#if ! [ -d $3 ]
-#then
-#	mkdir $3
-#fi
-#find $2 -name "*.$1"
-#for file in `find $2 -name "*$1" -print `
-#do
-#	echo $file
-#echo Kopiert Scripts nach Aufgaben
-#	cp $file $3
-#done
-
-
+echo "Es wurden $counter Dateien kopiert"
 
 
 

@@ -6,22 +6,33 @@
 if [ $# -eq 0 ]
 then
 	echo Parameter leer
-
-# Fehlerbehandlung 2
-# Prüfen ob Parameter eine Zahl ist
-elif [[ ! "$1" =~ ^[0-9]+$ ]]
-then
-	echo Keine Zahl $1
-
-# Eigentliche Ausgabe
+	beer=0
 else
-	while [ $1 ]
+	beer=$1
+fi
+
+# Prüfen ob Parameter eine Zahl ist
+if [[ "$beer" =~ ^[0-9]+$ ]]
+then
+# Eigentliche Ausgabe
+	while [ $beer -gt 0 ]
 	do
-		echo Falschen Bier im Kühlschrank
-		((c--))
-		echo Parameter $c: $1
-		echo Kühlschrank leer 2
-		shift
+		if [ $beer -eq 1 ];then
+		echo $beer Flasche Bier im Kühlschrank
+		echo $beer Flashe Bier
+		echo Nimm sie raus
+		else
+		echo $beer Falschen Bier im Kühlschrank
+		echo $beer Flashen Bier
+		echo Nimm eine raus
+		fi
+		echo Trink sie aus
+		((beer--))
+		
 	done
-	echo Kühlschrank leer 3
+		echo Der Kühlschrank ist leer... 
+		exit 0
+else
+	>&2 echo Bitte eine Nummer eingeben
+	exit 1
 fi

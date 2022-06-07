@@ -1,40 +1,90 @@
 #!/bin/bash
 # Testfile von MF
 
-rechnung=0
-echo "Treffen Sie eine Wahl"
-select var in "Weggli" "Gipfeli" "Biberli" "Rechnung" "Abschluss"
-do
-	case $var in
-	"Weggli") echo Es wurde Weggli für 1.- ausgewählt 
-	((rechnung=$rechnung+1));;
-	"Gipfeli") echo Es wurde Gipfeli für 2.- ausgewählt 
-	((rechnung=$rechnung+2));;
-	"Biberli") echo Es wurde Biberli für 3.- ausgewählt 
-	((rechnung=$rechnung+3));;
-	"Rechnung") 
-	if [ $rechnung ]
-	then
-		echo Es wurde kein Artikel ausgewählt
-		else
-		echo Rechnung beträgt $rechnung".-"
-	fi
-	;;
-	"Abschluss")  
+#anzahl=$#
+#zaehler=0
+#summe=0
 
-	if [ $rechnung ]
-        then
-                echo Danke für Ihren Einkauf. Sie müssen nichts bezahlen.
-                else
-                echo Danke für Ihren Einkauf. Bitte bezahlen Sie $rec    hnung".-"
-        fi
-	break;;
-	*) echo Artikel gibt es nicht
+#while [ $zaehler -lt $anzahl ]
+#do
+#    # Nur wenn $1 eine Zahl ist, wird summiert
+#    if [ $1 -eq $1 ]
+#    then
+#        let summe=$summe+$1
+#    fi
+#        let zaehler=$zaehler+1
+#        shift
+#done
+#echo $summe
+
+. sum_param.sh
+
+#summe () {
+
+#        echo "Anzahl Parameter: $# "
+#        sum=0
+#        local wert=111
+#        for i in $@
+#        do
+#                ((sum+=$i))
+#        #declare -i s
+#        #echo $1 und $2
+#        #s=$1+$2
+#        # oder ((s=$1+$2))
+#        done
+#        #echo $wert
+#        #echo "Summe ist: $sum"
+#        return 4
+#}
 
 
-esac
-done
+#summe 10 10 10
+#echo $?
+#echo Wert ist local $wert
+# echo "Summe ist: $sum"
+#summe 10 2
+# echo "Summe ist: $sum"
+#summe 11 200
+# echo "Summe ist: $sum"
 
+
+
+
+#rechnung=0
+
+#echo "Treffen Sie eine Wahl"
+#select var in "Weggli" "Gipfeli" "Biberli" "Rechnung" "Abschluss"
+#do
+#	case $var in
+#	"Weggli") echo Es wurde Weggli für 1.- ausgewählt 
+#	((rechnung=$rechnung+1));;
+#	"Gipfeli") echo Es wurde Gipfeli für 2.- ausgewählt 
+#	((rechnung=$rechnung+2));;
+#	"Biberli") echo Es wurde Biberli für 3.- ausgewählt 
+#	((rechnung=$rechnung+3));;
+##	"Rechnung") 
+#	if [ $rechnung ]
+#	then
+#		echo Es wurde kein Artikel ausgewählt
+#		else
+#		echo Rechnung beträgt $rechnung".-"
+#	fi
+#	;;
+#	"Abschluss")  
+#
+#	if [ $rechnung ]
+#        then
+#                echo Danke für Ihren Einkauf. Sie müssen nichts bezahlen.
+#                else
+#                echo Danke für Ihren Einkauf. Bitte bezahlen Sie $rec    hnung".-"
+#        fi
+#	break;;
+#	*) echo Artikel gibt es nicht
+#
+#
+#esac
+#done
+#
 
 
 
