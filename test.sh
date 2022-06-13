@@ -17,8 +17,7 @@
 #done
 #echo $summe
 
-. sum_param.sh
-
+usage
 #summe () {
 
 #        echo "Anzahl Parameter: $# "
