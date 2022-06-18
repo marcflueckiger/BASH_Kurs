@@ -1,6 +1,14 @@
 #!/bin/bash
 # Testfile von MF
 
+#source $FNCPATH/math_functions
+source $FNCPATH/string_functions
+#summe 1 2
+usage
+#if is_int
+echo $?
+
+echo kein test
 #anzahl=$#
 #zaehler=0
 #summe=0
@@ -17,7 +25,7 @@
 #done
 #echo $summe
 
-usage
+#usage
 #summe () {
 
 #        echo "Anzahl Parameter: $# "

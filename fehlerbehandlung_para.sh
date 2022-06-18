@@ -42,3 +42,15 @@ then
 fi
 
 echo $file
+
+#########
+# FILE Endung 
+########
+
+if [ $1 ]
+then
+   endung=$1
+else
+   echo "Es wurde keine File-Endung eingegeben!"
+   exit 1
+fi

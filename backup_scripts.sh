@@ -3,6 +3,7 @@
 # Kopiert die Scipts
 echo Kopiert Scripts nach Aufgaben
 cp  ~/scripts/*.sh ~/Aufgaben/
+cp  ~/ueb/*.sh ~/Aufgaben/
 
 # Lädt alle nach GITHub
 echo Push nach GitHub
