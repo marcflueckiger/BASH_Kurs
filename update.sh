@@ -16,5 +16,5 @@ sudo apt autoclean
 sudo apt autoremove
 
 # Log erstellen
-echo "Ausgeführt am: $(date)" >/home/marc/update.log
+echo "Ausgeführt am: $(date)" >/home/marc/logs/update.log
 
