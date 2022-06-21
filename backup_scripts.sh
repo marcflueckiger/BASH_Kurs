@@ -11,6 +11,7 @@ cd ~/Aufgaben
 git status
 git add .
 #git push https://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@github.com/marcflueckiger/BASH_Kurs.git
-git commit -m "Neue Versionen"
+git push https://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@github.com/marcflueckiger/BASH_Kurs.git 
+git commit -m "Neue Versionen $(date)"
 git status
 
