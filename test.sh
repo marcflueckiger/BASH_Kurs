@@ -1,14 +1,59 @@
 #!/bin/bash
 # Testfile von MF
 
-#source $FNCPATH/math_functions
-source $FNCPATH/string_functions
-#summe 1 2
-usage
-#if is_int
-echo $?
 
-echo kein test
+
+
+
+
+
+
+
+#pfad=Testumgebung
+
+#while getopts cd opt 2>/dev/null
+#do
+#case $opt in
+#       c) echo Testumgebung 
+#	if [ ! -d $pfad ];then
+#	echo 
+#		$pdad existiert bereits
+#	else
+#	mkdir $pfad
+#	mkdir ${pfad}/Variante1
+#	mkdir ${pfad}/Variante2
+#	fi
+#	cp test1 test2 ${pfad}/Variante1
+#	cp test1 test2 ${pfad}/Variante2
+#	#ls ${pfad}
+#	echo Testumgebung ist bereit
+#	
+#	;;
+#       d) echo Tetumgebung gelöscht 
+#	rm -r ${pfad} 2>/dev/null
+#	ls T* 2>/dev/null
+#	;;
+#       *) echo unbekannte Option;;
+#esac
+#done
+#
+
+
+
+
+
+
+
+
+
+#source $FNCPATH/math_functions
+#source $FNCPATH/string_functions
+#summe 1 2
+#usage
+#if is_int
+#echo $?
+
+#echo kein test
 #anzahl=$#
 #zaehler=0
 #summe=0
