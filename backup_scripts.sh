@@ -1,5 +1,13 @@
 #!/bin/bash
 # Info zu git
+# sudo apt update 
+# sudo apt install git-core
+# git config --global user.name "marcflueckiger"
+# git config --global user.mail marc.flueckiger@student.ipso.ch
+# git config --list
+# vi .gitconfig
+# 
+
 # 1. mkdir Aufgaben # Verzeichnis für Repository
 # 2. cd Aufgabne
 # 3. git init # Leeres Git-Repository in Aufgaben/.git/ initialisiert
