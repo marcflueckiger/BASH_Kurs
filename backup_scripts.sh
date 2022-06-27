@@ -28,7 +28,7 @@ git status
 git add . 
 
 #newest
-# git push https://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@github.com/marcflueckiger/BASH_Kurs.git
+git push https://github.com/marcflueckiger/BASH_Kurs.git
 # Kommentar beim Kommiten eintragen
 git commit -m "Neue Versionen $(date)"
 git status
