@@ -1,11 +1,5 @@
 #!/bin/bash
 # Info zu git
-# sudo apt update 
-# sudo apt install git-core
-# git config --global user.name "marcflueckiger"
-# git config --global user.mail marc.flueckiger@student.ipso.ch
-# git config --list
-# vi .gitconfig
 # 
 
 # 1. mkdir Aufgaben # Verzeichnis für Repository
@@ -28,7 +22,9 @@ git status
 git add . 
 
 #newest
+# git push https://marcflueckiger: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@github.com/marcflueckiger/BASH_Kurs.git
 git push https://github.com/marcflueckiger/BASH_Kurs.git
+
 # Kommentar beim Kommiten eintragen
 git commit -m "Neue Versionen $(date)"
 git status
