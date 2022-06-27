@@ -23,7 +23,8 @@ git add .
 
 #newest
 # git push https://marcflueckiger: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@github.com/marcflueckiger/BASH_Kurs.git
-git push https://github.com/marcflueckiger/BASH_Kurs.git
+git push 
+#https://github.com/marcflueckiger/BASH_Kurs.git
 
 # Kommentar beim Kommiten eintragen
 git commit -m "Neue Versionen $(date)"
