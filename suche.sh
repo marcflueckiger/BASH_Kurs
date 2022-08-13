@@ -8,7 +8,7 @@ else
 echo ${1} wird gesucht
 suchstring=${1}
 
-for i in `grep ${suchstring} ~/*/*.sh -l | cut -d ":" -f1`
+for i in `grep ${suchstring} ~/*/*.sh -l | cut -d ":" -f1 ; grep ${suchstring} ~/*/*/*.sh -l | cut -d ":" -f1`
 do 
 	#echo hallo
 	from=`echo ${i}`

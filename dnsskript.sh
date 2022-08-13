@@ -14,7 +14,8 @@ do
 	
 	# MX Record der Domain anzeigen
 	host -t MX ${domain}
-
+	# alternative 
+	dig -t MX ${domain}
 	# IP Adresse der Domain anzeigen
 	#host ${domain} | grep "has address" | cut -d " " -f4
 	# IP in eine Variable bringen
