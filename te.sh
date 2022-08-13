@@ -1,18 +1,35 @@
 #!/bin/bash
 #20.06
+
+
+datum=`date +"%Y.%m.%d %H:%M:%S"`
+#befehl="$(${1})" > /dev/null 2>&1
+
+$1 >>logfile.txt 2>&1
+if [ $? -eq 0 ];then echo $datum $1 SUCCESS >>logfile.txt 2>&1;else echo $datum $1 FAILURE >>logfile.txt 2>&1;fi
+
+
+
+
+
 # Test mit Arrays
 
-declare -A arr1
-
-arr1[Apfel]=Früchte
-arr1[Birne]=Früchte
-arr1[Lauch]=Gemüse
-arr1[Sellerie]=Gemüse
 
 
-echo ${arr1[@]}
-echo ${#arr1[*]}
-echo ${!arr1[*]}
+
+
+
+#declare -A arr1
+
+#arr1[Apfel]=Früchte
+#arr1[Birne]=Früchte
+#arr1[Lauch]=Gemüse
+#arr1[Sellerie]=Gemüse
+
+
+#echo ${arr1[@]}
+#echo ${#arr1[*]}
+#echo ${!arr1[*]}
 
 
 # 16.05.22

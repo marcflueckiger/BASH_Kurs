@@ -86,5 +86,6 @@
 # read -p "Name eingeben: " name
 # read -s -p "Passwort eingeben " pass
 
-
+# Datum 
+# date +"%Y.%m.%d %H:%M:%S"
 
