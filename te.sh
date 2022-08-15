@@ -1,51 +1,31 @@
 #!/bin/bash
 #20.06
 
-#BACKIFS="$IFS"
 LOGDIR=${LOGDIR:=~/}
-#LOGDIR=~/
-logfile=aufgabe-002.sh
-log=${LOGDIR}${logfile}
-datum=`date +"%Y.%m.%d %H:%M:%S"`
-#befehl=${1}
-#IFS=$''
-#${befehl} ; if [ $? -eq 0 ];then echo $datum $befehl SUCCESS; else echo $datum $befehl FAILURE;fi
-#echo "${1}"
-#(${1}) >>$log 2>&1
-echo "Logdir $LOGDIR"
-echo "Logfile $logfile"
+datum=$(date +'%Y.%m.%d %H:%M:%S')
 
-touch $log
+if [ $# -gt 0 ];then
 
-if [ $# -eq 0 ];then
-echo 'usage: aufgabe-002.sh command'
-exit 1
+	command="$*"
+else
+	echo 'usage: aufgabe-002.sh command'
+	exit 1
 fi
-
-if [ ! -w $log ];then
-echo "error: cannot write to logfile $log" 
-exit 2
+if [ ! -w $LOGDIR/aufgabe-002.log ];then
+	echo "error: cannot write to logfile $LOGDIR/aufgabe-002.log"
+	exit 2
 fi
+exec >>$LOGDIR/aufgabe-002.log 2>&1
 
-(${1}) >/dev/null 2>&1 
+eval $command
+ecode=$?
+
 if [ $? -eq 0 ]
-then echo $datum  "${1}" SUCCESS >>$log 2>&1 
-${1} >>$log 2>&1
-
-else 
-echo $datum "${1}" FAILURE ExitCode:$? >>$log 2>&1
-${1} >>$log 2>&1
+then
+	echo "$datum $command SUCCESS"
+else
+	echo "$datum $command FAILURE $ecode" 
 fi
-
-#IFS=$BACKIFS
-cat $log
-#echo $?
-# Test mit Arrays
-
-
-
-
-
 
 #declare -A arr1
 

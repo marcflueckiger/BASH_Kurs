@@ -41,4 +41,78 @@
 
 # ******************** Ihre Lösung: ********************
 
+name=$1
 
+# Fehlerbehandlung d)
+if [ $# -ne 1 ]; then
+    echo "usage: $(basename $0) name" 1>&2
+    exit 1;
+fi
+
+# Fehlerbehandlung e)
+if [ ! -e "$name" ]; then
+    echo "error: $name not found." 1>&2
+    exit 2;
+fi
+
+# Fehlerbehandlung f)
+if [ ! -f "$name" ]; then
+    echo "error: $name is not a normal file." 1>&2
+    exit 3;
+fi
+
+# Fehlerbehandlung g)
+if [ ! -r "$name" ]; then
+    echo "error: cannot read $name. Permission denied." 1>&2
+    exit 4;
+fi
+
+# Hauptfunktionen a), b) und c)
+counter=0;
+while read line
+do
+    (( counter++ ))
+    echo $counter $line
+done < $name
+echo
+echo "$counter lines read from $name"
+
+
+
+exit 2
+
+if ! [ $# -eq 1 ]
+then
+        echo "usage: aufgabe-1.sh text-file" >&2
+        exit 1
+# 
+elif ! [ -e $1 ];then
+	echo "error: $1 not found."
+	exit 2
+
+elif ! [ -f $1 ];then
+	echo "error: $1 is not a normal file."
+	exit 3
+
+elif ! [ -r $1 ];then
+	echo "error: cannot read $1. Permission denied."
+	exit 4
+else
+
+zeilennr=0
+        while read balade
+        do
+      if [[ ! $balade == '' ]]
+                then
+                         ((zeilennr++))
+                          echo $zeilennr: $balade
+       else
+	echo "keine Zeilen vorhanden"
+	   fi
+	
+        done <$1
+
+        echo $Balade
+	echo $zeilennr lines read from $1
+
+fi

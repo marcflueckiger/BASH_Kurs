@@ -26,4 +26,24 @@
 #                    2. Verwenden Sie keine andere Shell als /bin/bash
 
 # ******************** Ihre Lösung: ********************
+threshold=$1
 
+# Fehlerbehandlung 1
+if [ $# -ne 1 ]; then
+    echo "usage: $(basename $0) threshold-in-percent" 1>&2 
+    exit 1;
+fi
+
+# Fehlerbehandlung 2
+if ! [ "$threshold" -eq "$threshold" ]; then
+    echo "error: $(basename $0) threshold-in-percent" 1>&2
+    exit 2;
+fi
+
+
+df | tail -n +2 | tr -d % | while read s1 s2 s3 s4 pct mountpoint
+do
+    if [ $pct -gt $threshold ]; then
+        echo "$mountpoint is ${pct}% used - exceeds ${threshold}%"
+    fi
+done

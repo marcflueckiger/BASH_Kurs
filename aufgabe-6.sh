@@ -25,4 +25,25 @@
 # Einschränkungen:   1. Benennen sie diese Datei nicht um. 
 #                    2. Verwenden Sie keine andere Shell als /bin/bash
 # ******************** Ihre Lösung: ********************
+source lib/myfunctions
+
+while [ ${1} ]
+
+    do
+        if ! is_writable_dir $1 ;then
+                echo ${1} create files not permitted.
+        else
+                echo ${1} create files permitted.
+	fi
+	
+	shift
+    done
+
+
+
+
+
+
+
+
 

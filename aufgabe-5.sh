@@ -13,3 +13,5 @@
 #                    2. Verwenden Sie keine andere Shell als /bin/bash
 # ****************
 
+proces=$1
+ps -eo pid,ppid,cmd --sort pid | grep $proces

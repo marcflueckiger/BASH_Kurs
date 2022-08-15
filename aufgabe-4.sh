@@ -20,3 +20,55 @@
 #                    2. Verwenden Sie keine andere Shell als /bin/bash
 # ******************** Ihre Lösung: ********************
 
+
+
+# git installieren
+#sudo apt update
+#sudo apt install git-core
+
+#1 git konfigurenen / User Einrichten
+git config --global user.name "marc.flueckiger"
+git config --global user.email marc.flueckiger@students.ipso.ch
+# Exclude Liste erstellen
+git config --global core.excludesFile '~/.gitignore'
+# Konfig darstellen
+git config --list
+
+# 1. mkdir Aufgaben # Verzeichnis für Repository
+mkdir ~/loesungen/
+mkdir ~/loesungen/repo
+# 2. cd Aufgabne
+cd ~/loesungen/repo
+# 3. git init # Leeres Git-Repository in Aufgaben/.git/ initialisiert
+git init
+# 4. Bestehende Skripts ins Verzeichnis kopieren
+
+# Kopiert die Scipts
+echo erstelle ein leeres Script
+#cp  ~/scripts/*.sh ~/Aufgaben/
+#cp  ~/ueb/*.sh ~/Aufgaben/
+touch neuesscript.sh
+
+# Zeigt Status
+echo Git Status abfragen
+git status
+
+
+# Kommentar beim Kommiten eintragen
+#git commit -m "Neue Versionen $(date)"
+git status
+#cd ..
+
+echo "Das ist eine Geheime Datei" >Geheim
+Geheim >>~/.gitignore
+
+# Alle Scripts hochladen
+ls -l --color=auto
+git add .
+git status
+
+# Kommentar beim Kommiten eintragen
+git commit -m "aufgabe-4 erledigt"
+git log
+git status
+# ende
