@@ -22,8 +22,7 @@ git status
 git add . 
 
 #newest
-git push https://marcflueckiger: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@github.com/marcflueckiger/BASH_Kurs.git
-
+git push https://marcflueckiger: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@github.com/marcflueckiger/BASH_Kurs.git
 #git push https://marcflueckiger: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@github.com/marcflueckiger/BASH_Kurs.git
 # git push https://github.com/marcflueckiger/BASH_Kurs.git
 
