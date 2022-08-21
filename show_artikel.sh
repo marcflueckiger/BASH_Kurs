@@ -6,11 +6,9 @@ if [ $# -eq 0 ]
 then
 #
         read -p "Datei angeben: " file
-
 else
         file=$1
 fi
-
 if [ ! -f $file ]
 then
         echo "Die Datei $file existiert nicht"

@@ -9,7 +9,7 @@ echo "${*}" wird gesucht
 #suchstring="${1}"
 suchstring="${*}"
 echo $suchstring
-
+echo '#################################'
 counter=1
 for i in `grep "${suchstring}" ~/*/*.sh -i -l | cut -d ":" -f1 ; grep "${suchstring}" ~/*.sh -i -l | cut -d ":" -f1 ; grep "${suchstring}" ~/*/*/*.sh -i -l | cut -d ":" -f1`
 do 
@@ -23,7 +23,7 @@ do
 	#--color=always
 	#	grep "${suchstring}" $from
 	#	grep --color=always "${suchstring}" $from -i
-	grep --color=always "${suchstring}" $from 
+	grep --color=always "${suchstring}" $from -i 
 	#grep ${suchstring} $from -i
 	#echo -e "\033[36m$counter: ${from}\033[0m"
 	((counter++))
@@ -33,7 +33,7 @@ do
 	#grep $suchstring ~/scripts/*.sh -l | cat $from 
 	#echo '##############################'
 done
-
+echo '#################################'
 # ORIGINAL
 # for i in `grep 'if' ~/scripts/*.sh -l | cut -d ":" -f1`;do echo $i ;done
 # 

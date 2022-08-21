@@ -1,5 +1,18 @@
 #!/bin/bash
 
+# kommentare
+<<komm
+echo '$@ '$@
+echo '$* '$*
+echo '$? '$?
+echo '$# ' $#
+echo '$0 '$0
+echo '$1 '$1
+echo '$2 '$2
+echo '$3 '$3
+
+komm
+
 # Operationen
 # +, -, *, /, %(Divisionsrest).
 # Var+=3|Var=$Var+3 - Erhöhe den Wert von Var mit dem Wert 3
